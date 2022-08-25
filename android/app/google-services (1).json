@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "757017620931",
+    "project_id": "smobe-6d795",
+    "storage_bucket": "smobe-6d795.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757017620931:android:fb7906b0bf1b1cfd5ecd76",
+        "android_client_info": {
+          "package_name": "smobe.ae"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757017620931-1r0q2sqgfqs5ouso4sj569vdpt988f0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2d5InnWCdzaxuaazIMabaBLTyKqeolMM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "757017620931-1r0q2sqgfqs5ouso4sj569vdpt988f0u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

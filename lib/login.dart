@@ -25,9 +25,8 @@ class LoginScreen extends StatelessWidget {
   }
 
   Future<String?> _signupUser(SignupData data) async {
-    final user = FirebaseFirestore.instance
-        .collection('Employee')
-        .doc('67XfHyu7G1CjF0YaXOvj');
+    final user =
+        FirebaseFirestore.instance.collection('employee').doc('employee');
     final json = {
       'id': data.name,
       'password': data.password,
