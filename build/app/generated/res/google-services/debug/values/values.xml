@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">757017620931-1r0q2sqgfqs5ouso4sj569vdpt988f0u.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">757017620931</string>
+    <string name="google_api_key" translatable="false">AIzaSyC2d5InnWCdzaxuaazIMabaBLTyKqeolMM</string>
+    <string name="google_app_id" translatable="false">1:757017620931:android:fb7906b0bf1b1cfd5ecd76</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC2d5InnWCdzaxuaazIMabaBLTyKqeolMM</string>
+    <string name="google_storage_bucket" translatable="false">smobe-6d795.appspot.com</string>
+    <string name="project_id" translatable="false">smobe-6d795</string>
+</resources>

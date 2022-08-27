@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/muhammad/Desktop/smobe_EA/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/Users/muhammad/Desktop/проекты/smobe/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/muhammad/Desktop/smobe_EA/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/Users/muhammad/Desktop/проекты/smobe/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -9,6 +10,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
   double screenHeight = 0;
   double screenWidth = 0;
 
@@ -83,26 +86,23 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   fieldTitle('Employee ID'),
-                  customField('Enter your employee ID', Icons.person, false),
+                  customField(
+                      'Enter your employee ID', Icons.person, false, 'mail'),
                   fieldTitle('Password'),
-                  customField('Enter your password', Icons.lock, true),
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: screenHeight / 20),
-                    height: 60,
-                    width: screenWidth,
-                    decoration: BoxDecoration(
-                        color: primary,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(50))),
-                    child: const Center(
-                      child: Text(
-                        'LOGIN',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'NexaBold',
-                          fontSize: 20,
-                        ),
-                      ),
+                  customField(
+                      'Enter your password', Icons.lock, true, 'password'),
+                  ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size.fromHeight(50),
+                    ),
+                    onPressed: signIn,
+                    icon: Icon(
+                      Icons.lock_open,
+                      size: 32,
+                    ),
+                    label: Text(
+                      'LOG IN',
+                      style: TextStyle(fontSize: 24),
                     ),
                   ),
                 ],
@@ -133,7 +133,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   //inputs
-  Widget customField(String hint, final IconData icon, bool _isIcon) {
+  Widget customField(
+      String hint, final IconData icon, bool _isIcon, String _Controller) {
     return Container(
       width: screenWidth,
       decoration: const BoxDecoration(
@@ -162,6 +163,9 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: EdgeInsets.only(right: screenWidth / 10),
               child: Expanded(
                 child: TextFormField(
+                  controller: _Controller == 'mail'
+                      ? emailController
+                      : passwordController,
                   obscureText: _isIcon ? _isObscure : false,
                   enableSuggestions: false,
                   autocorrect: false,
@@ -196,5 +200,11 @@ class _LoginScreenState extends State<LoginScreen> {
         ],
       ),
     );
+  }
+
+  Future signIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim());
   }
 }

@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:loud_firestore/cloud_firestore.dart';
 
 const users = const {
-  'dribbble@gmail.com': '12345',
+  'm@mail.ru': '12345',
   'hunter@gmail.com': 'hunter',
 };
 
@@ -25,13 +26,6 @@ class LoginScreen extends StatelessWidget {
   }
 
   Future<String?> _signupUser(SignupData data) async {
-    final user =
-        FirebaseFirestore.instance.collection('employee').doc('employee');
-    final json = {
-      'id': data.name,
-      'password': data.password,
-    };
-    await user.set(json);
     debugPrint('Signup Name: ${data.name}, Password: ${data.password}');
     return Future.delayed(loginTime).then((_) {
       return null;
@@ -62,4 +56,17 @@ class LoginScreen extends StatelessWidget {
       onRecoverPassword: _recoverPassword,
     );
   }
+
+  Future createUser({required String id}) async {
+    final docUser =
+        FirebaseFirestore.instance.collection('employee').doc('hello');
+
+    final json = {
+      'id': id,
+      'password': 1234,
+    };
+    await docUser.set(json);
+  }
+
+  
 }
