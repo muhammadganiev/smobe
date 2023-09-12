@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
-import 'package:loud_firestore/cloud_firestore.dart';
 
 const users = const {
   'm@mail.ru': '12345',
@@ -67,6 +66,4 @@ class LoginScreen extends StatelessWidget {
     };
     await docUser.set(json);
   }
-
-  
 }

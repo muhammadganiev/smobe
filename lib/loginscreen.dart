@@ -93,16 +93,19 @@ class _LoginScreenState extends State<LoginScreen> {
                       'Enter your password', Icons.lock, true, 'password'),
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                      minimumSize: Size.fromHeight(50),
+                      minimumSize: const Size.fromHeight(50),
                     ),
                     onPressed: signIn,
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.lock_open,
                       size: 32,
                     ),
-                    label: Text(
+                    label: const Text(
                       'LOG IN',
-                      style: TextStyle(fontSize: 24),
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontFamily: 'NexaBold',
+                          color: Colors.white),
                     ),
                   ),
                 ],

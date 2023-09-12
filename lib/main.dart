@@ -27,9 +27,9 @@ class MyApp extends StatelessWidget {
       title: 'Smobe',
       theme: ThemeData(
         primarySwatch: Colors.lightGreen,
-        textTheme: TextTheme(headline3: TextStyle(fontFamily: 'NexaBold')),
+        textTheme: const TextTheme(headline3: TextStyle(fontFamily: 'NexaBold')),
       ),
-      home: MainPage(),
+      home:const MainPage(),
     );
   }
 }
@@ -41,10 +41,11 @@ class MainPage extends StatelessWidget {
         body: StreamBuilder<User?>(
             stream: FirebaseAuth.instance.authStateChanges(),
             builder: (context, snapshot) {
-              if (snapshot.hasData)
-                return Text('home');
-              else
-                return LoginScreen();
+              if (snapshot.hasData) {
+                return const Text('home');
+              } else {
+                return const LoginScreen();
+              }
             }),
       );
 }
